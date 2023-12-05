@@ -1,0 +1,31 @@
+FUNCTION exemple-palindrome(mot, i, j) : INTEGER
+VAR
+
+BEGIN
+    IF (i==j and mot.lenght[i]==mot.lenght[j] ) THEN
+        RETURN write('votre mot est palindrome')
+    END_IF
+    IF (i==j and mot.lenght[i]<>mot.lenght[j] ) THEN
+        RETURN write('votre mot n'est pas palindrome')
+    END_IF
+    IF (i<>j and mot.lenght[i]==mot.lenght[j] ) THEN
+        exemple-palindrome(mot, i+1, j-1)
+    END_IF
+END
+
+ALGORITHM palindrome
+VAR
+    mot: STRING;
+    i,j: INTEGER;
+BEGIN
+    write("entrer un mot:")
+    read(mot):
+    i:=0;
+    j:=mot.lenght-1;
+    WHILE (mot.lenght<=1) DO
+        write("entrer un mot:")
+    read(mot);
+    END_WHILE
+END
+
+    
